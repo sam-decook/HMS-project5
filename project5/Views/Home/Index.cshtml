@@ -2,7 +2,58 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div id="ape-grid">
+    <div id="requirements" class="block">
+        <h2>Requirements</h2>
+        <div id="accordion">
+        </div>
+    </div>
+
+    <div id="plan" class="block">
+        <div id="plan-header">
+            <h2 id="plan-name">Academic Plan</h2>
+            <div id="plan-info">
+                <p id="major"><span class="tag">Major</span></p>
+                <p id="minor"><span class="tag">Minor</span> Bible</p>
+                <p id="gpa"><span class="tag">GPA</span> 3.7</p>
+                <p id="major-gpa"><span class="tag">Major GPA</span> 3.2</p>
+                <p id="total-hours"><span class="tag">Total Hours</span> 137</p>
+                <p id="catalog"><span class="tag">Catalog</span></p>
+            </div>
+        </div>
+        <div class="plan-grid">
+        </div>
+    </div>
+
+    <div id="homepages" class="block">
+        <h2>Home Pages</h2>
+        <a class="btn" href="/~deCook/cs3220.html" target="_blank">Sam</a>
+        <a class="btn" href="/~medeiro/cs3220.html" target="_blank">Henrique</a>
+        <a class="btn" href="/~brugel/cs3220.html" target="_blank">Matt</a>
+        <a class="btn" href="http://judah.cedarville.edu" target="_blank">Home</a>
+    </div>
+
+    <div id="course-finder" class="block">
+        <div id="course-header">
+            <h2>Course Finder</h2>
+            <input type="text" id="searchBar" onkeyup="searchCourses()" name="courseSearch">
+            <p id="numEntries"></p>
+            <div class="btn" id="delete-button" ondragover='onDragOver(event);' ondragleave='onDragLeave(event);' ondrop='deleteCourse(event);'>
+                <img src="delete-button.png" alt="delete icon" width="30" height="30">
+                <p><b>Delete</b></p>
+            </div>
+        </div>
+        <table id="courses-table">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">Credits</th>
+                    <th onclick="sortTable(1)">Course ID</th>
+                    <th onclick="sortTable(2)">Course Name</th>
+                    <th onclick="sortTable(3)">Description</th>
+                </tr>
+            </thead>
+            <tbody id="courses-body">
+            </tbody>
+        </table>
+    </div>
 </div>

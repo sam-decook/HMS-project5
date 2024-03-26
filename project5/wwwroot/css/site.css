@@ -1,3 +1,4 @@
+/**
 html {
   font-size: 14px;
 }
@@ -17,6 +18,221 @@ html {
   min-height: 100%;
 }
 
+
 body {
   margin-bottom: 60px;
 }
+/**/
+
+/* Color palette from: https://colorhunt.co/palette/f9b57299b080748e63faf8ed */
+:root {
+    --primary: #f9b572;
+    --secondary: #99b080;
+    --tertiary: #748e63;
+    --accent: #faf8ed;
+}
+
+* {
+    font-family: "Fira Sans", sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--primary);
+    padding: 1rem;
+}
+
+#title {
+    font-size: 2.3rem;
+}
+
+#controls {
+    display: flex;
+}
+
+    #controls img {
+        margin: 10px;
+        margin-right: 5px;
+    }
+
+.tag {
+    font-size: 0.8rem;
+    color: var(--accent);
+    background-color: var(--tertiary);
+    border-radius: 3px;
+    padding: 2px 3px 2px 3px;
+}
+
+.semester p {
+    padding: 4px;
+    border-radius: 3px;
+}
+
+.semester > p {
+    cursor: pointer;
+}
+
+    .semester > p:hover {
+        background-color: var(--primary);
+    }
+
+.btn {
+    display: inline-block;
+    color: rgb(0, 0, 0);
+    background-color: var(--primary);
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+    .btn:hover {
+        color: var(--accent);
+        background-color: var(--secondary);
+    }
+
+#ape-grid {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 70% 30%;
+    margin: 4px;
+    height: 85vh;
+}
+
+.block {
+    background-color: #f0f0f1;
+    margin: 4px;
+    padding: 0.7rem;
+    border-radius: 0.5rem;
+    overflow: scroll;
+}
+
+p {
+    font-size: 0.9rem;
+}
+
+#requirements h3 {
+    color: var(--accent);
+    background-color: var(--tertiary);
+    border-radius: 0.3em;
+    padding: 5px;
+    padding-left: 10px;
+    margin: 5px 0px;
+    cursor: pointer;
+}
+
+#requirements p {
+    cursor: pointer;
+    margin-top: 0.25rem;
+}
+
+#plan-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#plan-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#plan-header h2 {
+    margin-left: 5px;
+    padding: 0.3rem;
+    border: 1px solid #f0f0f1;
+    border-radius: 0.3em;
+}
+
+#plan-info p {
+    margin-right: 10px;
+}
+
+#plan-info span {
+    margin-left: 10px;
+}
+
+.plan-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    color: black;
+}
+
+.semester {
+    border: var(--secondary) solid 1px;
+    border-radius: 0.3em;
+    background-color: white;
+    padding: 5px;
+    margin: 5px;
+}
+
+.semester-info {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+}
+
+    .semester-info span {
+        padding-left: 0.3rem;
+        padding-right: 0.3rem;
+    }
+
+.semester h3 {
+    margin-left: 4px;
+}
+
+#course-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#searchBar {
+    margin-left: 10px;
+    width: 60%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+    #searchBar:focus {
+        outline: 2px solid var(--primary)
+    }
+
+#delete-button {
+    display: flex;
+    align-items: center;
+}
+
+#courses-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+    #courses-table th {
+        text-align: left;
+    }
+
+    #courses-table tr {
+        cursor: pointer;
+    }
+
+    #courses-table th,
+    #courses-table td {
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+    }
+/**/
