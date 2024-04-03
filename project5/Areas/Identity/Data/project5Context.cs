@@ -24,4 +24,8 @@ public class project5Context : IdentityDbContext<project5User>
 public DbSet<project5.Models.Catalog> Catalog { get; set; } = default!;
 
 public DbSet<project5.Models.Plan> Plan { get; set; } = default!;
+
+public DbSet<project5.Models.Faculty> Faculty { get; set; } = default!;
+
+public DbSet<project5.Models.Administrator> Administrator { get; set; } = default!;
 }

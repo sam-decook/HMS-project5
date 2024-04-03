@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using project5.Data;
 
@@ -11,9 +12,11 @@ using project5.Data;
 namespace project5.Migrations
 {
     [DbContext(typeof(project5Context))]
-    partial class project5ContextModelSnapshot : ModelSnapshot
+    [Migration("20240403004918_administrator")]
+    partial class administrator
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

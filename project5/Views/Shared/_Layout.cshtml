@@ -42,15 +42,18 @@
             <h1 id="title">ACADEMIC PLANNING</h1>
         </div>
         <div id="controls">
-            <button class="btn">Save</button>
-            <button class="btn">Manage Plans</button>
-            <img src="wwwroot/account-icon.png" alt="account icon" width="30" height="30">
-            <button class="btn">Log out</button>
+            <a class="btn">Save</a>
+            <a class="btn">Manage Plans</a>
+            <a class="btn" asp-area="" asp-controller="Catalogs" asp-action="Index">Catalogs</a>
+            <a class="btn" asp-area="" asp-controller="Faculties" asp-action="Index">Faculties</a>
+            <a class="btn" asp-area="" asp-controller="Administrators" asp-action="Index">Admin</a>
+            <img src="account-icon.png" alt="account icon" width="30" height="30">
+            <a class="btn">Log out</a>
             <partial name="_LoginPartial" />
         </div>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+    <div>
+        <main role="main">
             @RenderBody()
         </main>
     </div>

@@ -5,6 +5,7 @@ using System.Diagnostics;
 
 namespace project5.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -14,6 +15,7 @@ namespace project5.Controllers
             _logger = logger;
         }
 
+        [Authorize]
         public IActionResult Index()
         {
             return View();
