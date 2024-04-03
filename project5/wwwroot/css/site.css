@@ -1,29 +1,3 @@
-/**
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-
-body {
-  margin-bottom: 60px;
-}
-/**/
-
 /* Color palette from: https://colorhunt.co/palette/f9b57299b080748e63faf8ed */
 :root {
     --primary: #f9b572;
@@ -52,13 +26,18 @@ header {
     font-size: 2.3rem;
 }
 
+#title a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
 #controls {
     display: flex;
 }
 
     #controls img {
-        margin: 10px;
-        margin-right: 5px;
+        padding: 0px;
+        margin-right: 0.5rem;
     }
 
 .tag {
@@ -88,6 +67,7 @@ header {
     background-color: var(--primary);
     font-size: 16px;
     text-align: center;
+    vertical-align: middle;
     text-decoration: none;
     border: none;
     border-radius: 5px;
