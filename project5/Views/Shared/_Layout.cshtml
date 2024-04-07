@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/project5.styles.css" asp-append-version="true" />
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -19,9 +20,13 @@
         <div id="controls">
             <a class="btn">Save</a>
             <a class="btn">Manage Plans</a>
-            <a class="btn" asp-area="" asp-controller="Catalogs" asp-action="Index">Catalogs</a>
-            <a class="btn" asp-area="" asp-controller="Faculties" asp-action="Index">Faculties</a>
-            <a class="btn" asp-area="" asp-controller="Administrators" asp-action="Index">Admin</a>
+@*             <a class="btn" asp-area="" asp-controller="Majors" asp-action="Index">Major</a>
+            <a class="btn" asp-area="" asp-controller="courses" asp-action="Index">Courses</a>
+            <a class="btn" asp-area="" asp-controller="catalogcourses" asp-action="Index">Catalogcourses</a>
+            <a class="btn" asp-area="" asp-controller="plans" asp-action="Index">plan</a>
+            <a class="btn" asp-area="" asp-controller="requirements" asp-action="Index">Req</a>
+            <a class="btn" asp-area="" asp-controller="plancourses" asp-action="Index">plancourses</a>
+            <a class="btn" asp-area="" asp-controller="majorplans" asp-action="Index">majorplan</a> *@
             <partial name="_LoginPartial" />
         </div>
     </header>
@@ -33,9 +38,13 @@
 
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/js/dragndrop.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+<footer>
+  <a style="font-size: 0.75rem; margin-left: 1rem;" href="https://www.flaticon.com/free-icons/yes" title="yes icons">Yes icons created by hqrloveq - Flaticon</a>
+</footer>
 </html>

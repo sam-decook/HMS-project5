@@ -34,7 +34,7 @@ namespace project5.Controllers
             }
 
             var plan = await _context.Plan
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.planID == id);
             if (plan == null)
             {
                 return NotFound();
@@ -54,7 +54,7 @@ namespace project5.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name")] Plan plan)
+        public async Task<IActionResult> Create([Bind("planID,UserID,name")] Plan plan)
         {
             if (ModelState.IsValid)
             {
@@ -86,9 +86,9 @@ namespace project5.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] Plan plan)
+        public async Task<IActionResult> Edit(int id, [Bind("planID,UserID,name")] Plan plan)
         {
-            if (id != plan.Id)
+            if (id != plan.planID)
             {
                 return NotFound();
             }
@@ -102,7 +102,7 @@ namespace project5.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PlanExists(plan.Id))
+                    if (!PlanExists(plan.planID))
                     {
                         return NotFound();
                     }
@@ -125,7 +125,7 @@ namespace project5.Controllers
             }
 
             var plan = await _context.Plan
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.planID == id);
             if (plan == null)
             {
                 return NotFound();
@@ -151,7 +151,7 @@ namespace project5.Controllers
 
         private bool PlanExists(int id)
         {
-            return _context.Plan.Any(e => e.Id == id);
+            return _context.Plan.Any(e => e.planID == id);
         }
     }
 }

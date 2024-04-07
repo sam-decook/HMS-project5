@@ -101,6 +101,10 @@ p {
     font-size: 0.9rem;
 }
 
+#requirements img {
+    object-fit: contain;
+  }
+
 #requirements h3 {
     color: var(--accent);
     background-color: var(--tertiary);
@@ -110,6 +114,11 @@ p {
     margin: 5px 0px;
     cursor: pointer;
 }
+
+.reqCourse {
+    display: flex;
+    justify-content: space-between;
+  }
 
 #requirements p {
     cursor: pointer;

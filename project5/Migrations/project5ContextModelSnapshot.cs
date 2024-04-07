@@ -222,71 +222,101 @@ namespace project5.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("project5.Models.Administrator", b =>
+            modelBuilder.Entity("project5.Models.Catalogcourse", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Administrator");
-                });
-
-            modelBuilder.Entity("project5.Models.Catalog", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
-
                     b.Property<int>("year")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Catalog");
-                });
-
-            modelBuilder.Entity("project5.Models.Faculty", b =>
-                {
-                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("year"));
 
-                    b.Property<string>("student")
+                    b.Property<string>("courseID")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.HasKey("Id");
+                    b.HasKey("year");
 
-                    b.ToTable("Faculty");
+                    b.ToTable("Catalogcourse");
+                });
+
+            modelBuilder.Entity("project5.Models.Major", b =>
+                {
+                    b.Property<int>("majorID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("majorID"));
+
+                    b.Property<string>("major")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("majorID");
+
+                    b.ToTable("Major");
                 });
 
             modelBuilder.Entity("project5.Models.Plan", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("planID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("planID"));
 
-                    b.Property<string>("Name")
+                    b.Property<string>("UserID")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.HasKey("Id");
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("planID");
 
                     b.ToTable("Plan");
+                });
+
+            modelBuilder.Entity("project5.Models.Requirements", b =>
+                {
+                    b.Property<int>("majorID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("majorID"));
+
+                    b.Property<string>("category")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("courseID")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("majorID");
+
+                    b.ToTable("Requirements");
+                });
+
+            modelBuilder.Entity("project5.Models.courses", b =>
+                {
+                    b.Property<string>("courseID")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<float>("credits")
+                        .HasColumnType("float");
+
+                    b.Property<string>("description")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("courseID");
+
+                    b.ToTable("courses");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

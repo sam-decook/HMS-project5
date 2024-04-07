@@ -1,0 +1,41 @@
+﻿@model IEnumerable<project5.Models.Requirements>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.courseID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.category)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.courseID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.category)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.majorID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.majorID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.majorID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

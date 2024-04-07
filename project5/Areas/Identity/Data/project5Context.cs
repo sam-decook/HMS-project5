@@ -8,6 +8,8 @@ namespace project5.Data;
 
 public class project5Context : IdentityDbContext<project5User>
 {
+    internal IEnumerable<object> catalogcourse;
+
     public project5Context(DbContextOptions<project5Context> options)
         : base(options)
     {
@@ -21,11 +23,19 @@ public class project5Context : IdentityDbContext<project5User>
         // Add your customizations after calling base.OnModelCreating(builder);
     }
 
-public DbSet<project5.Models.Catalog> Catalog { get; set; } = default!;
 
 public DbSet<project5.Models.Plan> Plan { get; set; } = default!;
 
-public DbSet<project5.Models.Faculty> Faculty { get; set; } = default!;
+public DbSet<project5.Models.Major> Major { get; set; } = default!;
 
-public DbSet<project5.Models.Administrator> Administrator { get; set; } = default!;
+public DbSet<project5.Models.courses> courses { get; set; } = default!;
+
+
+public DbSet<project5.Models.Requirements> Requirements { get; set; } = default!;
+
+public DbSet<project5.Models.Catalogcourse> Catalogcourse { get; set; } = default!;
+
+public DbSet<project5.Models.plancourses> plancourses { get; set; } = default!;
+
+public DbSet<project5.Models.majorplan> majorplan { get; set; } = default!;
 }

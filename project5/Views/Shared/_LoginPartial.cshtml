@@ -7,6 +7,8 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
+    
+    Console.WriteLine("****************USER HERE: ********************\n" + User);
     <a class="btn" asp-area="Identity" asp-page="/Account/Manage/Index"><img src="account-icon.png" alt="account icon" width="30" height="30">Account</a>
     <a class="btn" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">Logout</a>
 }

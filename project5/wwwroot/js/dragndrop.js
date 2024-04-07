@@ -68,6 +68,7 @@ function onDrop(event) {
         totalHours += hours;
 
         $("#total-hours").html(`<span class="tag">Total Hours</span> ${totalHours}`)
+        addCheckmark(tag);
 
     } else {
         let courseId = event.dataTransfer.getData("text");
@@ -106,4 +107,22 @@ function deleteCourse(event) {
 
     $course = $("#" + courseId).detach();
     $("#total-hours").html(`<span class="tag">Total Hours</span> ${totalHours}`)
+
+    removeCheckmark(tag);
+}
+
+function addCheckmark(tag) {
+    $(".reqCourse").each(function() {
+        if ($(this).find("span").text() == tag) {
+            $(this).append($(`<img src="checkmark.png" alt="checkmark">`));
+        }
+    })
+}
+
+function removeCheckmark(tag) {
+    $(".reqCourse").each(function() {
+        if ($(this).find("span").text() == tag) {
+            $(this).find("img").detach();
+        }
+    })
 }

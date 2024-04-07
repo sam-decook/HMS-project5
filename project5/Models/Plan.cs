@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace project5.Models;
+﻿namespace project5.Models;
 
 public partial class Plan
 {
-    public int Id { get; set; }
+    public int planID { get; set; }
 
-    public string Name { get; set; } = null!;
+    public string UserID { get; set; }
+    
+    public string name { get; set; }
+    
 }
